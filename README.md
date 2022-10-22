@@ -1,1 +1,1 @@
-# msa-hw5-auth-service
+# auth-service

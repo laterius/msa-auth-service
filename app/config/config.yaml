@@ -1,0 +1,11 @@
+db:
+  host: localhost
+  port: 5432
+  dbname: postgres
+  user: postgres
+
+http:
+  port: 8000
+
+app:
+  env: prod

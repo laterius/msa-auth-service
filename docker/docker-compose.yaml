@@ -1,0 +1,30 @@
+version: '3'
+services:
+  app:
+    container_name: app
+    image: 34234247632/auth-service:v2.2
+    networks:
+      - otus-msa-hw5
+    restart: always
+    entrypoint: /entrypoint.sh
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: db
+      DB_PASSWORD: example
+  db:
+    container_name: db
+    image: postgres:14.4
+    restart: always
+    networks:
+      - otus-msa-hw5
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: example
+      TZ: 'Europe/Moscow'
+
+networks:
+  otus-msa-hw5:
