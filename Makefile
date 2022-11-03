@@ -1,8 +1,8 @@
 build:
-	docker build -f docker/Dockerfile . -t 34234247632/auth-service:v1.0
+	docker build -f docker/Dockerfile . -t 34234247632/auth-service:v1.1
 
 push:
-	docker push 34234247632/auth-service:v1.0
+	docker push 34234247632/auth-service:v1.1
 
 docker-start:
 	cd docker && docker-compose up -d

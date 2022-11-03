@@ -1,8 +1,9 @@
+#TODO необходимо переписать на вызов сервиса auth
 version: '3'
 services:
   app:
     container_name: app
-    image: 34234247632/auth-service:v2.2
+    image: 34234247632/auth-service:v1.1
     networks:
       - otus-msa-hw5
     restart: always

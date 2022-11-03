@@ -42,6 +42,7 @@ func main() {
 	userService := service.NewUserService(userRepo)
 	loginGet := transport.LoginGet()
 	loginPost := transport.LoginPost(userService)
+	logout := transport.Logout()
 
 	engine := html.New("./views", ".html")
 	srv := fiber.New(fiber.Config{Views: engine})
@@ -60,6 +61,7 @@ func main() {
 	srv.Get("/probe/ready", transport.RespondOk)
 	srv.Get("/login", loginGet.Handle())
 	srv.Post("/login", loginPost.Handle())
+	srv.Get("/logout", logout.Handle())
 
 	srv.All("/*", transport.DefaultResponse)
 
